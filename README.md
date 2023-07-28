@@ -7,9 +7,9 @@
 	- [Enemies](#enemies) 
 	- [Towers](#towers) 
 	- [Resources](#resources)
-  - [Map generation](#map-generation)
-  - [Trolley](#trolley)
-  - [City](#city)
+  	- [Map generation](#map-generation)
+  	- [Trolley](#trolley)
+  	- [City](#city)
 4. [Level Design](#level-design)
   - [Main rules of levels](#level-rules)
   - [List of levels](#level-list)
@@ -26,7 +26,7 @@
 ## 2. Folder structure <a name="folder-structure"></a> 
 ### Below there is an image but also a short description of basic folder structure
 
-![Bez tytułu](https://github.com/PipelonDevs/TowerDefence/assets/95643408/8a72f4e2-08b4-4977-9ee6-f895bd9cefc6)
+![image](https://github.com/PipelonDevs/TowerDefence/assets/95643408/fe61b5ae-94b6-499d-a3d9-788153359e54)
 
 - Art
 
@@ -54,6 +54,8 @@
    - Prefabs: Contains prefabricated or reusable assets representing in-game elements.
    - Scenes: Holds scene files defining various game levels or environments.
    - Misc: Reserved for any miscellaneous files or assets that don't fit in other categories.
+     
+- Sandbox: A playground to test out ideas (please clear after being finished with tests and reorganizing used stuff)
 
 ## 3. Game Mechanics <a name="game-mechanics"></a> 
   ### 3.1 Enemies <a name="enemies"></a> 
