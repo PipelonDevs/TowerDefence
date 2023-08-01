@@ -19,6 +19,7 @@
 6. [Controls](#controls) 
 7. [Settings](#settings) 
 8. [Conventions](#conventions) 
+   - [C# Code](#cs-code)
 9. [FAQs](#faqs) 
 
 ## 1. Introduction <a name="introduction"></a> 
@@ -87,7 +88,7 @@ List and explain the controls required to play the game, such as placing towers,
 ## 7. Settings <a name="settings"></a> 
 Describe the various settings and options available to players, such as sound controls, graphics settings, and key bindings. 
 ## 8. Conventions <a name="conventions"></a>
-### 8.1 C# Code <a name="cs code"></a>
+### 8.1 C# Code <a name="cs-code"></a>
 - PascalCase for public methods and properties 
 - _camelCase for private methods and properties
 - camelCase for local variables
