@@ -18,7 +18,8 @@
 	- [In-Game HUD](#in-game-hud) 
 6. [Controls](#controls) 
 7. [Settings](#settings) 
-8. [FAQs](#faqs) 
+8. [Conventions](#conventions) 
+9. [FAQs](#faqs) 
 
 ## 1. Introduction <a name="introduction"></a> 
 ### Welcome to the Tower Defense game documentation. This document provides an overview of the game's features and how to play. 
@@ -85,5 +86,11 @@ Explain the in-game heads-up display (HUD) elements, including resource indicato
 List and explain the controls required to play the game, such as placing towers, upgrading towers, and navigating the game menus. 
 ## 7. Settings <a name="settings"></a> 
 Describe the various settings and options available to players, such as sound controls, graphics settings, and key bindings. 
-## 8. FAQs <a name="faqs"></a> 
+## 8. Conventions <a name="conventions"></a>
+### 8.1 C# Code <a name="cs code"></a>
+- PascalCase for public methods and properties 
+- _camelCase for private methods and properties
+- camelCase for local variables
+- UPPER_CASE for constants
+## 9. FAQs <a name="faqs"></a> 
 Anticipate common questions players might have and provide answers to them here. 
