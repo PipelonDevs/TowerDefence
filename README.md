@@ -89,9 +89,9 @@ List and explain the controls required to play the game, such as placing towers,
 Describe the various settings and options available to players, such as sound controls, graphics settings, and key bindings. 
 ## 8. Conventions <a name="conventions"></a>
 ### 8.1 C# Code <a name="cs-code"></a>
-- PascalCase for public methods and properties 
+- PascalCase for public methods 
 - _camelCase for private methods and properties
-- camelCase for local variables
+- camelCase for public properties and local variables
 - UPPER_CASE for constants
 ## 9. FAQs <a name="faqs"></a> 
 Anticipate common questions players might have and provide answers to them here. 
