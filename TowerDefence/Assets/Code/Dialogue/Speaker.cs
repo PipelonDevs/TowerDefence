@@ -37,13 +37,6 @@ namespace Code.Dialogue
         private void StartConversation()
         {
 
-
-            if (!story.canContinue)
-            {
-                Debug.Log($"Next dialogue: {nextDialogue}, doesn't allow conversation to start");
-                return;
-            }
-
             if (DialogueManager.SetSpeaker(this))
             {
                 _textBox.SetActive(true);
@@ -54,10 +47,11 @@ namespace Code.Dialogue
                 Debug.Log("Speaker already set");
         }
 
-        public void FinishConversation(string nextDialogue)
+        public void FinishConversation()
         {
-            this.nextDialogue = nextDialogue;
+            this.nextDialogue = story.variablesState["next_dialogue"].ToString();
             _textBox.SetActive(false);
+            
         }
     }
 }

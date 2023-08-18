@@ -11,7 +11,7 @@ Ink is a scripting language for writing interactive narrative. Only selected fea
 
 |     Aspect     |                 Syntax                  |              Example               |
 |:--------------:|:---------------------------------------:|:----------------------------------:|
-|     import     |        `INCLUDE <path to file>`         |       `INCLUDE someFile.ink`       |
+|     import     |        `INCLUDE <path to file>`         |      `INCLUDE GLOBALS.ink`       |
 |      knot      |           `=== knotName ===`            |       `=== MakeEnemies ===`        |
 |      tag       |  `#tagName callName param1 param2 ...`  | `#function HatePlayer:Lady Madlen` |
 |      line      | `Character: <line finished with enter>` |      `Player: Your mother.\n`      |
@@ -19,13 +19,14 @@ Ink is a scripting language for writing interactive narrative. Only selected fea
 | sticky choice  |            `+ [Choice name]`            |            `[Go Away]`             |
 |  basic branch  |             `-> <knotName>`             |              `-> END`              |
 
+- all NPC should begin with `INCLUDE GLOBALS.ink` and regard its variables
 - tags should fit [TagParser.cs](../Code/Dialogue/Helpers/TagParser.cs)
-- TODO: conditions
+- tags are separated by ';' (TODO: maybe should be by '\n')
+- enter key is used to change the speaker.
+- first line belongs to the NPC, second to the Player
 
 
 ### Remarks
-- Dialogues can be tested in Unity Editor or in Inky IDE
-- Enter key is used to change the speaker.)
-- tags are separated by ';' (TODO: maybe should be by '\n')
 - function related tags may be replaced by ink functions
+- Dialogues can be tested in Unity Editor or in Inky IDE
 
