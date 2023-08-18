@@ -10,7 +10,13 @@ namespace Code.Dialogue.Helpers
         /// </summary>
         /// <param name="tags">
         ///     List of tags, where each tag suits format:
-        ///     #tagName optionalParam
+        ///     #tagName callbackName:optionalParam
+        ///
+        ///     Available tagNames:
+        ///     - function: for side effects that not affect the Speaker
+        ///     - method: for side effects that affect the Speaker
+        ///
+        ///     Available callbackNames can be found in DialogueCallbacks.cs
         /// </param>
         public static void Parse(string[] tags)
         {
