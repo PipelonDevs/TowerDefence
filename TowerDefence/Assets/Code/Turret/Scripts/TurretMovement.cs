@@ -6,28 +6,26 @@ public class TurretMovement : MonoBehaviour
 {
     public Transform turretHead; // Assign the turret head component in the prefab's hierarchy.
     public Transform firePoint; // Assign the fire point component in the prefab's hierarchy.
-    public float rotationSpeed = 10f;
-    public float fireRate = 1f;
-    public GameObject bulletPrefab; // Replace with your bullet or projectile prefab.
+    public TurretSettings settings;
 
-    float detectionRange = 1000f; // Adjust this to your desired detection range.
+    
 
-    private Transform target;
-    private float fireCooldown = 0f;
+    private Transform _target;
+    private float _fireCooldown = 0f;
 
     void Update()
     {
         FindTarget();
-        if (target != null)
+        if (_target != null)
         {
             RotateTurret();
-            if (fireCooldown <= 0f)
+            if (_fireCooldown <= 0f)
             {
                 Fire();
-                fireCooldown = 1f / fireRate;
+                _fireCooldown = 1f / settings.fireRate;
             }
         }
-        fireCooldown -= Time.deltaTime;
+        _fireCooldown -= Time.deltaTime;
     }
 
     void FindTarget()
@@ -40,7 +38,7 @@ public class TurretMovement : MonoBehaviour
         foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy < shortestDistance && distanceToEnemy <= detectionRange)
+            if (distanceToEnemy < shortestDistance && distanceToEnemy <= settings.detectionRange)
             {
                 shortestDistance = distanceToEnemy;
                 nearestEnemy = enemy;
@@ -49,29 +47,29 @@ public class TurretMovement : MonoBehaviour
 
         if (nearestEnemy != null)
         {
-            target = nearestEnemy.transform;
+            _target = nearestEnemy.transform;
         }
         else
         {
-            target = null;
+            _target = null;
         }
     }
 
     void RotateTurret()
     {
-        Vector3 direction = target.position - transform.position;
+        Vector3 direction = _target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
-        Vector3 rotation = Quaternion.Lerp(turretHead.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles;
+        Vector3 rotation = Quaternion.Lerp(turretHead.rotation, lookRotation, Time.deltaTime * settings.rotationSpeed).eulerAngles;
         turretHead.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
     void Fire()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = Instantiate(settings.bulletPrefab, firePoint.position, firePoint.rotation);
         ProjectileMovement bulletScript = bullet.GetComponent<ProjectileMovement>();
 
         // Calculate the direction from the turret's fire point towards the target.
-        Vector3 directionToTarget = (target.position - firePoint.position).normalized;
+        Vector3 directionToTarget = (_target.position - firePoint.position).normalized;
 
         // Launch the bullet in the calculated direction.
         bulletScript.Launch(directionToTarget);
