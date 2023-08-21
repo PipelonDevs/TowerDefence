@@ -6,10 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/City/Scenes/GloomyCity/CityScene.unity
+    path: Assets/Level/Scenes/GloomyCity/CityScene.unity
     guid: f52d26a2b6880734684e46dd4c243105
   - enabled: 1
-    path: Assets/City/Scenes/GloomyCity/TavernScene.unity
+    path: Assets/Level/Scenes/GloomyCity/TavernScene.unity
     guid: a2b7f0bc68ad5ce41a70afe0060580ed
   m_configObjects: {}
-  m_UseUCBPForAssetBundles: 0
