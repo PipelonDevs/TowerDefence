@@ -119,7 +119,7 @@ namespace Code.Dialogue
         /// </summary>
         private void FinishDialogue()
         {
-            speaker.FinishConversation("End");
+            speaker.FinishConversation();
             speaker = null;
         }
 

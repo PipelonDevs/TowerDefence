@@ -70,8 +70,37 @@ Explain the resources players can earn or spend, such as in-game currency for pu
 Describe the process of map generation, its variability and usage examples
 ### 3.5 Trolley <a name="trolley"></a>
 Describe the trolley movement, its interactions with environment and enemies
+
 ### 3.6 City <a name="city"></a>
-List the available actions in the cities, types of cities, explain the interactions with NPCs
+_List the available actions in the cities, types of cities, explain the interactions with NPCs_
+
+#### City Description:
+City contains locations where player can :
+- interact with NPCs, 
+- buy/sell items, 
+- get quests
+- start a new journey **(How?)** 
+- enter a location like Tavern. Player has to click door or other entrance. After that player will be moved to the location. To exit the location player has to **(What?)**. After that player will be moved to the city.
+
+#### Available cities:
+##### [GloomyCity](TowerDefence/Assets/Art/Textures/darkFantasy%20-%20Tavern%20and%20the%20Moon.png):
+- Lore:
+- Locations:
+ - [Tavern](TowerDefence/Assets/Art/Textures/Pixel_Art_dark_fantasy_pixel_art_big_tavern_with_a_lot_of_spac_0.jpg)
+   - Lore:
+   - NPC:
+     - Bartender
+     - Lady Madlen
+
+#### NPC
+##### Bartender
+- Lore:
+- Quests:
+- Shop
+##### Lady Madlen
+- Lore:
+- Quests:
+
 ## 4. Level Design <a name="level-design"></a> 
 Explain the process of creating and designing game levels. Discuss different types of terrains, obstacles, and strategies for level progression. 
 ### 4.1 Main rules of levels <a name="level-rules"></a> 
