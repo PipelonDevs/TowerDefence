@@ -18,9 +18,21 @@
 	- [In-Game HUD](#in-game-hud) 
 6. [Controls](#controls) 
 7. [Settings](#settings) 
-8. [Conventions](#conventions) 
-   - [C# Code](#cs-code)
-9. [FAQs](#faqs) 
+8. [Conventions](#conventions)
+ 	 - [C# Code](#cs-code)
+9. [Packages](#packages)
+	- [AI Navigation](#ai-navigation)
+ 	- [Cinemachine](#cinemachine)
+  	- [Input System](#input-system)
+   	- [Post Processing](#post-processing)
+   	- [Shader Graph](#shader-graph)
+   	- [Splines](#splines)
+   	- [TextMeshPro](#textmeshpro)
+   	- [Universal RP](#urp)
+   	- [Visual effect graph](#vfx-graph)
+10. [Architecture](#architecture)
+	- [Singleton](#singleton)
+11. [FAQs](#faqs) 
 
 ## 1. Introduction <a name="introduction"></a> 
 ### Welcome to the Tower Defense game documentation. This document provides an overview of the game's features and how to play. 
@@ -93,5 +105,43 @@ Describe the various settings and options available to players, such as sound co
 - _camelCase for private methods and properties
 - camelCase for public properties and local variables
 - UPPER_CASE for constants
-## 9. FAQs <a name="faqs"></a> 
+## 9. Packages <a name="packages"></a>
+### 9.1 AI Navigation <a name="ai-navigation"></a>
+AI navigation provides AI navigation features, enabling pathfinding and navigation for game entities. 
+### 9.2 Cinemachine <a name="cinemachine"></a>
+Cinemachine is a powerful camera system that helps you create dynamic and cinematic camera movements. 
+### 9.3 Input System <a name="input-system"></a>
+The Input System package offers a flexible and efficient way to handle player input.
+### 9.4 Post Processing <a name="post-processing"></a>
+Post processing enables you to apply post-processing effects to your game's visuals. 
+### 9.5 Shader Graph <a name="shader-graph"></a>
+Shader Graph is a tool that allows you to create shaders visually, without writing code. 
+### 9.6 Splines <a name="splines"></a>
+The Spline package helps you create and manipulate splines, which are essential for creating curved paths and trajectories in your game.
+### 9.7 TextMeshPro <a name="textmeshpro"></a>
+TextMesh Pro is an advanced text rendering package that offers improved text quality and flexibility over Unity's built-in text system.
+### 9.8 Universal Render Pipeline <a name="urp"></a>
+The Universal Render Pipeline package provides a high-quality, performant rendering solution for various platforms. 
+### 9.9 Visual effect graph <a name="vfx-graph"></a>
+The Visual Effect Graph allows you to create complex visual effects using a node-based graph system.
+## 10. Architecture <a name="architecture"></a>
+### 10.1 Singleton <a name="singleton"></a>
+- Singleton Base Class:
+This is a generic base class, named Singleton, that allows you to implement the Singleton design pattern for any MonoBehaviour-derived class. It ensures that only one instance of the provided class exists in the scene. Example usage:
+Inheritance:
+
+		public class SceneHandler : Singleton<SceneHandler>
+
+Calling singleton (SceneHandler singleton):
+
+		SceneHandler.Instance.func()
+  		
+  
+- SceneHandler
+This class, named SceneHandler, inherits from the previously defined Singleton<SceneHandler> class. It represents a manager for handling scene transitions and quitting the game.
+
+- SingletonsHolder
+This class, named SingletonsHolder, inherits from the Singleton<SingletonsHolder> class as well. It acts as a placeholder to hold and manage other singleton instances in your game. 
+		
+## 11. FAQs <a name="faqs"></a> 
 Anticipate common questions players might have and provide answers to them here. 
