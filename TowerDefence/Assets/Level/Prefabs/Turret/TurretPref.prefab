@@ -299,6 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3052764857762343081}
   - component: {fileID: -44313762549956813}
+  - component: {fileID: -503795816860815458}
   m_Layer: 0
   m_Name: TurretPref
   m_TagString: Untagged
@@ -335,6 +336,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretHead: {fileID: 4220547754351822923}
   firePoint: {fileID: 2821648816710143203}
-  rotationSpeed: 10
-  fireRate: 1
-  bulletPrefab: {fileID: 7775291035139832596, guid: 1bdd41021eb878f43a6811735e3f1fe8, type: 3}
+  settings: {fileID: 11400000, guid: 272a252a72700714a9a248bf33aaef9d, type: 2}
+--- !u!65 &-503795816860815458
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8276467315309201059}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
