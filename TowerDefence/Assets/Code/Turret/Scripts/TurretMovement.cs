@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TurretMovement : MonoBehaviour
 {
-    public Transform turretHead; // Assign the turret head component in the prefab's hierarchy.
-    public Transform firePoint; // Assign the fire point component in the prefab's hierarchy.
+    public Transform turretHead; 
+    public Transform firePoint; 
     public TurretSettings settings;
 
     
@@ -68,10 +68,9 @@ public class TurretMovement : MonoBehaviour
         GameObject bullet = Instantiate(settings.bulletPrefab, firePoint.position, firePoint.rotation);
         ProjectileMovement bulletScript = bullet.GetComponent<ProjectileMovement>();
 
-        // Calculate the direction from the turret's fire point towards the target.
+       
         Vector3 directionToTarget = (_target.position - firePoint.position).normalized;
 
-        // Launch the bullet in the calculated direction.
         bulletScript.Launch(directionToTarget);
     }
 }
