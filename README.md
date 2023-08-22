@@ -127,7 +127,8 @@ The Visual Effect Graph allows you to create complex visual effects using a node
 ## 10. Architecture <a name="architecture"></a>
 ### 10.1 Singleton <a name="singleton"></a>
 - Singleton Base Class:
-This is a generic base class, named Singleton, that allows you to implement the Singleton design pattern for any MonoBehaviour-derived class. It ensures that only one instance of the provided class exists in the scene. Example usage:
+This is a generic base class, named Singleton, that allows you to implement the Singleton design pattern for any MonoBehaviour-derived class. It ensures that only one instance of the provided class exists in the scene. INSTANCE REFERENCE IN UNITY INSPECTOR CHANGES ON SCENE LOAD THUS TO HAVE E.G. BUTTON USING THIS OBJECT YOU NEED TO WRITE SCRIPT THAT ADDS EVENT LISTENER AND DYNAMICALLY ADDS EXISTING REFERENCE AT RUNTIME, OTHERWISE AFTER FIRST SCENE LOAD NEW REFERENCES WILL BE MISSING IN BUTTON'S INSPECTOR
+Example usage:
 Inheritance:
 
 		public class SceneHandler : Singleton<SceneHandler>
