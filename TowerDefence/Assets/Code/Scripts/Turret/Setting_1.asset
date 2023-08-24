@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Setting_1
   m_EditorClassIdentifier: 
   rotationSpeed: 5
-  fireRate: 10
+  fireRate: 2
   bulletPrefab: {fileID: 7775291035139832596, guid: 1bdd41021eb878f43a6811735e3f1fe8, type: 3}
+  detectionRange: 100
