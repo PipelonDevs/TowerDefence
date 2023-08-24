@@ -28,9 +28,10 @@ public class Path : MonoBehaviour
         // Move the obj towards the target position
         obj.transform.position = Vector3.MoveTowards(obj.transform.position, targetPos, speed * Time.deltaTime);
 
-        // Adjust vertical position to stick to the terrain
         float terrainHeight = terrain.SampleHeight(obj.transform.position);
-        obj.transform.position = new Vector3(obj.transform.position.x, terrainHeight, obj.transform.position.z);
+
+        // Adjust the trolley's position to stick to the terrain while maintaining its own height
+        obj.transform.position = new Vector3(obj.transform.position.x, terrainHeight + obj.GetComponent<Renderer>().bounds.extents.y, obj.transform.position.z);
 
         // Rotate the obj to face the target position
         if (obj.transform.position != targetPos)
