@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System;
+using System.Linq;
 
 namespace Code.Dialogue.Helpers
 {
@@ -21,6 +23,20 @@ namespace Code.Dialogue.Helpers
             // Find NPC by name
             // Set NPC's next dialogue
             Debug.Log("Set next dialogue to " + nextDialogue);
+        }
+
+        /// <summary>
+        /// Used as an Ink function to color text
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="theme">Can be name of a color of hexadecimal RGBA </param>
+        /// <returns></returns>
+        public static string Color(string text, string theme)
+        {
+            string[]words = text.Split (' ');
+            Func < string, string > formatWord = word => $"<color={theme}>{word}</color>";
+
+            return string.Join(" ", words.Select(formatWord));
         }
     }
 }
