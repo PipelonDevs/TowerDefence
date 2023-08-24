@@ -1,0 +1,5 @@
+//// Locations:
+
+// Tavern
+LIST TavernShop = (wheat_beer=5), (barley_beer=8), whiskey=10    
+LIST BarleyTypes = (two_row=0), (six_row=1)
