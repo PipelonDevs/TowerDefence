@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Path : MonoBehaviour
@@ -23,6 +21,8 @@ public class Path : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pathIndex >= pathPoints.Length) return;
+        
         Vector3 targetPos = pathPoints[pathIndex].transform.position;
 
         // Move the obj towards the target position
