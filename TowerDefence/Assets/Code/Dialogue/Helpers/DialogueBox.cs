@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,21 +29,24 @@ namespace Code.Dialogue.Helpers
         public IEnumerator TypeSentence(string sentence)
         {
             ClearText();
-            for (var letterIndex = 0; letterIndex < sentence.Length; letterIndex++)
+            var words = sentence.Split(' '); // In a sentence there is no \n
+            
+            int displayedWords = 0;
+            foreach (string word in words)
             {
                 // Slow down the typing speed 
                 yield return new WaitForSeconds(1 - _slowPower);
 
-                var letter = sentence[letterIndex];
-                _message.text += letter;
-
+                _message.text += word + ' ';
+                displayedWords ++;
+                
                 // Ensure that the text box doesn't get overloaded with text
-                if (letterIndex > 40 && letter is '.' or '!' or '?' or ',') // TODO: problem with "..."
+                if (displayedWords > 5 && word.Last() is'.' or '?' or '!' or '?') 
                 {
                     Debug.LogWarning("Click space to continue");
                     yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
                     ClearText();
-                    letterIndex++; // Skip the space
+                    displayedWords = 0;
                 }
 
                 yield return null;
