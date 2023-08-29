@@ -6,18 +6,23 @@ public class ProjectileMovement : MonoBehaviour
 {
     public float bulletSpeed = 10f; // Adjust this to control the bullet's speed.
 
-    private Rigidbody rb; // Reference to the Rigidbody component.
+    protected Rigidbody rb; // Reference to the Rigidbody component.
 
-    void Awake()
+    protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
 
     // Called when the bullet is spawned.
-    public void Launch(Vector3 direction)
+    public virtual void Launch(Vector3 direction)
     {
         rb.velocity = direction * bulletSpeed; // Set the initial velocity.
-        Destroy(gameObject, 3f); // Destroy the bullet after a certain time (e.g., 3 seconds).
+     //  Destroy(gameObject, 10f);
     }
 
+    // Called when the bullet collides with something.
+    protected virtual void OnCollisionEnter(Collision collision)
+    {
+ 
+    }
 }
