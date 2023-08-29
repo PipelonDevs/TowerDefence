@@ -24,8 +24,8 @@ public class TurretMovement : MonoBehaviour
                 Fire();
                 _fireCooldown = 1f / settings.fireRate;
             }
+            _fireCooldown -= Time.deltaTime; 
         }
-        _fireCooldown -= Time.deltaTime;
     }
 
     void FindTarget()
