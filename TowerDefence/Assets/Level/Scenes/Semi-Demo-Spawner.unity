@@ -123,6 +123,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 90fe2497df3be46f5b44735f379bcc8b, type: 2}
+--- !u!1 &6707927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6707929}
+  - component: {fileID: 6707928}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: EnemySpawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &6707928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6707927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41e092dd581c4b8d803483b85143f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swarmerPrefab: {fileID: 841754727}
+  swarmerInterval: 4
+--- !u!4 &6707929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6707927}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.144066, y: 6.677653, z: 20.354694}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &24100397
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,9 +952,10 @@ GameObject:
   - component: {fileID: 390833269}
   - component: {fileID: 390833268}
   - component: {fileID: 390833272}
+  - component: {fileID: 390833273}
   m_Layer: 0
   m_Name: Trolley
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1031,6 +1078,21 @@ MonoBehaviour:
   - {fileID: 735584781}
   - {fileID: 661965242}
   speed: 2
+--- !u!114 &390833273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390833267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9dac59b6b4364f3bbaf9873cc33dbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  armor: 1
+  trolley: {fileID: 390833267}
 --- !u!1 &426917911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1958,7 +2020,7 @@ GameObject:
   - component: {fileID: 841754728}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2040,12 +2102,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 841754727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7038a5f520003248a6745ae71eb070a, type: 3}
+  m_Script: {fileID: 11500000, guid: 034eb09a088b01d45871569756818ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 841754732}
   player: {fileID: 390833267}
   attackRange: 2
+  attackDamage: 2
+  attackCooldown: 4
   character: {fileID: 841754728}
 --- !u!195 &841754732
 NavMeshAgent:
@@ -3867,3 +3931,4 @@ SceneRoots:
   - {fileID: 390833271}
   - {fileID: 1075429632}
   - {fileID: 841754735}
+  - {fileID: 6707929}
